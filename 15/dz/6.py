@@ -4,4 +4,4 @@ def f(a, x):
 for a in range(1, 100000):
     if all(f(a, x) for x in range(1, 1000000)):
         print(a)
-        break
+        break #2
