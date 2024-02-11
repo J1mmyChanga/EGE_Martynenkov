@@ -1,13 +1,6 @@
-def convert(n):
-    res = ''
-    while n != 0:
-        res += str(n % 4)
-        n //= 4
-    return res[::-1]
-
-for n in range(1, 10000):
-    dub = convert(n)
-    if len(dub) % 2 == 0:
-        dub = dub[:len(dub) // 2] + '0' + dub[len(dub) // 2:]
-    if int(dub) <= 180:
-        print(n)
+c = 0
+for x in range(-200, 200):
+    for y in range(200):
+        if x < 0 and y > -15*x/(675**0.5) and (y - 15) / 15 < ((x + (675**0.5))/(675**0.5)):
+            c += 1
+print(c)
