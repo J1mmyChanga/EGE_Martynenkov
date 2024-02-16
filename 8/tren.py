@@ -1,13 +1,9 @@
-from itertools import permutations, product
+from itertools import *
 
-
-a = []
-for i in product('ТИМАШЕВСК', repeat=6):
-    s = ''.join(i)
-    count_gl = s.count('И') + s.count('А') + s.count('Е')
-    count_sogl = 6 - count_gl
-    s = s.replace('М', 'Т').replace('В', 'Т').replace('С', 'Т').replace('К', 'Т')\
-    .replace('А', 'И').replace('Е', 'И')
-    if 'ШТ' not in s and 'ТШ' not in s and 'ШШ' not in s and count_gl < count_sogl:
-        a.append(s)
-print(len(a))
+k = 0
+for r in range(1, 11):
+    for i in permutations('0123456789', r=r):
+        if i[0] != '0' or len(i) == 1:
+            if int(''.join(i)) % 5 == 0:
+                k += 1
+print(k)
