@@ -1,0 +1,16 @@
+f = open('files/27B_2738.txt')
+n = int(f.readline())
+k = [0]*10
+for i in range(n):
+    x = str(int(f.readline()))
+    k[0] += x.count('0')
+    k[1] += x.count('1')
+    k[2] += x.count('2')
+    k[3] += x.count('3')
+    k[4] += x.count('4')
+    k[5] += x.count('5')
+    k[6] += x.count('6')
+    k[7] += x.count('7')
+    k[8] += x.count('8')
+    k[9] += x.count('9')
+print(min(k))
